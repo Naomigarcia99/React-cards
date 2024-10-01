@@ -28,10 +28,10 @@ export default function App() {
   ];
 
   const [step, setStep] = useState(0);
-  
+
   return (
     <>
-      <Card />;
+      <Card step={step} tutorialData={tutorialData} />;
     </>
   );
 }
