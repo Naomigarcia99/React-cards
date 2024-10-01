@@ -27,5 +27,11 @@ export default function App() {
     },
   ];
 
-  return <Card />;
+  const [step, setStep] = useState(0);
+  
+  return (
+    <>
+      <Card />;
+    </>
+  );
 }
