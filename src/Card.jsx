@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Indicator } from "./Indicator";
 
 export function Card({ step, tutorialData, nextStep, lastStep }) {
   const currentData = tutorialData[step];
@@ -17,23 +18,26 @@ export function Card({ step, tutorialData, nextStep, lastStep }) {
         </h2>
         <p className="mb-3 text-start">{currentData.description}</p>
       </div>
-      <div className="flex justify-end px-4">
-        {step > 0 && (
-          <button
-            onClick={lastStep}
-            className="btn py-2 px-4 rounded-full border-2 border-black mr-2"
-          >
-            ⬅
-          </button>
-        )}
-        {step < tutorialData.length - 1 && (
-          <button
-            onClick={nextStep}
-            className="btn py-2 px-4 rounded-full bg-black text-white"
-          >
-            ⮕
-          </button>
-        )}
+      <div className="flex justify-start px-4">
+        <Indicator tutorialData={tutorialData} step={step} />
+        <div className="flex ml-auto">
+          {step > 0 && (
+            <button
+              onClick={lastStep}
+              className="btn py-2 px-4 rounded-full border-2 border-black mr-2"
+            >
+              ⬅
+            </button>
+          )}
+          {step < tutorialData.length - 1 && (
+            <button
+              onClick={nextStep}
+              className="btn py-2 px-4 rounded-full bg-black text-white"
+            >
+              ⮕
+            </button>
+          )}
+        </div>
       </div>
     </div>
   );
