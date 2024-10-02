@@ -29,9 +29,13 @@ export default function App() {
 
   const [step, setStep] = useState(0);
 
+  function nextStep() {
+    setStep((prev) => prev + 1);
+  }
+
   return (
     <>
-      <Card step={step} tutorialData={tutorialData} />;
+      <Card step={step} tutorialData={tutorialData} nextStep={nextStep} />;
     </>
   );
 }
