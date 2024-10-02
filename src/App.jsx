@@ -44,6 +44,7 @@ export default function App() {
         tutorialData={tutorialData}
         nextStep={nextStep}
         lastStep={lastStep}
+        setStep={setStep}
       />
     </>
   );

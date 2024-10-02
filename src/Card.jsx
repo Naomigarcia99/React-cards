@@ -1,8 +1,12 @@
 import { useState } from "react";
 import { Indicator } from "./Indicator";
 
-export function Card({ step, tutorialData, nextStep, lastStep }) {
+export function Card({ step, tutorialData, nextStep, lastStep, setStep }) {
   const currentData = tutorialData[step];
+
+  const handleStepClick = (index) => {
+    setStep(index);
+  };
 
   return (
     <div className="max-w-sm mx-auto pt-0 px-0 pb-5 rounded-2xl shadow-lg overflow-hidden">
@@ -19,7 +23,11 @@ export function Card({ step, tutorialData, nextStep, lastStep }) {
         <p className="mb-3 text-start">{currentData.description}</p>
       </div>
       <div className="flex justify-start px-4">
-        <Indicator tutorialData={tutorialData} step={step} />
+        <Indicator
+          tutorialData={tutorialData}
+          step={step}
+          onStepClick={handleStepClick}
+        />
         <div className="flex ml-auto">
           {step > 0 && (
             <button
