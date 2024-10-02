@@ -30,12 +30,21 @@ export default function App() {
   const [step, setStep] = useState(0);
 
   function nextStep() {
-    setStep((prev) => prev + 1);
+    setStep((prev) => Math.min(prev + 1, tutorialData.length - 1));
+  }
+
+  function lastStep() {
+    setStep((prev) => Math.max(prev - 1, 0));
   }
 
   return (
     <>
-      <Card step={step} tutorialData={tutorialData} nextStep={nextStep} />;
+      <Card
+        step={step}
+        tutorialData={tutorialData}
+        nextStep={nextStep}
+        lastStep={lastStep}
+      />
     </>
   );
 }
