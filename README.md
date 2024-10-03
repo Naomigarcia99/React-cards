@@ -18,7 +18,8 @@ Before running the project, make sure you have the following prerequisites insta
 ### 1. Clone the repository
 First, clone the repository to your local machine:
 ```bash
- git clone https://github.com/Naomigarcia99/React-cards
+ git clone https://github.com/Naomigarcia99/React-cards.git
+ cd React-cards
 ```
 
 ### 2. Install the dependencies
